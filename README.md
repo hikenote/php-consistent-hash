@@ -1,2 +1,2 @@
 # php-consistent-hash
-a good php consistent hash class
+a good php consistent hash helper
