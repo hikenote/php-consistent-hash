@@ -21,6 +21,6 @@ php-consistent-hash
   $hash = new ConsistentHash\ConsistentHash();
   $arr = ['10.7.0.1', '10.7.0.2', '10.7.0.3'];
   $hash->addTargets($arr);//添加多个节点
-  $hash->lookup('hashkey');//通过hash寻找到合适的节点
+  $hash->lookup('hashkey');//输入特定的key通过相应的hash算法寻找到合适的节点
 ```
 
