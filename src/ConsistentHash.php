@@ -103,13 +103,13 @@ class ConsistentHash
     //查找位置,这个只是个接口,作用不大.
     public function lookup($resource)
     {
-        $targets = $this->lookupList($resource, 1);
+        $targets = $this->_lookupList($resource, 1);
         if (empty($targets)) throw new Exception('No targets exist');
         return $targets[0];
     }
 
     //主要靠这个函数,找节点位置,resource是给定的key,requestedCount是需要返回的节点数,默认用1
-    public function lookupList($resource, $requestedCount=1)
+    protected function _lookupList($resource, $requestedCount=1)
     {
         if (!$requestedCount)
             throw new Exception('Invalid count requested');
@@ -179,7 +179,7 @@ class ConsistentHash
         );
     }
 
-    private function _sortPositionTargets()
+    protected function _sortPositionTargets()
     {
         if (!$this->_positionToTargetSorted)
         {
